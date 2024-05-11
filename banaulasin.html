@@ -46,7 +46,7 @@
           <div class="col-lg-8 col-lg-offset-2">
     
             
-            <form id="contact-form" method="post" action="" role="form">
+            <form id="contact-form" method="post" action="formkarsila.php" role="form"  method="POST">
     
             <div class="messages"></div>
     
@@ -85,6 +85,61 @@
                 </div>
               </div>
               <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_work">Çalışma Durumu *</label>
+                    <select multiple class="form-control" id="is" name="is">
+                    <option value="ogrenci">Öğrenciyim</option>
+                    <option value="calisan">Çalışıyorum</option>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_uni">Üniversite</label>
+                    <select class="form-control" id="okul" name="okul">
+                      <option value="sau">Sakaraya Üniversitesi</option>
+                      <option value="itu">İTÜ</option>
+                      <option value="odtu">ODTÜ</option>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="radio_e">Cinsiyet</label>
+                    <br>
+                      <input class="form-check-input" type="radio" name="cinsiyet[]" id="radio_e" value="Erkek" checked>
+                      <label class="form-check-label" for="radio_e">
+                        Erkek
+                      </label>
+                      <input class="form-check-input" type="radio" name="cinsiyet[]" id="raido_k" value="Kadin">
+                      <label class="form-check-label" for="raido_k">
+                        Kadın
+                      </label>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="check_frnt">Alan</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="check_frnt" name="alan[]" value="frontend">
+                      <label class="form-check-label" for="check_frnt">Front-End</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="check_back" name="alan[]" value="backend">
+                    <label class="form-check-label" for="check_back">Back-End</label>
+                  </div>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="form_message">Mesaj *</label>
@@ -92,8 +147,13 @@
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <input type="submit" class="btn btn-success btn-send" value="Gönder">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                  <br><br>
+                  <button type="reset" class=" btn btn-danger ">Temizle</button>
+                  <input type="submit" name="submit" class="btn btn-success btn-send" value="Gönder">
                 </div>
               </div>
              
