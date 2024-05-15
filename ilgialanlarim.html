@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
+  
     <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="hakkimda.html">Muhammet Emin Akkaya</a>
@@ -39,8 +40,98 @@
           </div>
         </div>
       </nav>
+      <h1 class="text-center" id="meal">Yemek İsmi</h1>
+      <br><br>
+      <img class="rounded mx-auto d-block w-25" id="yemekresmi" src="" alt="">
+      <br><br>
+      <div class="row justify-content-center">
+          <table class="table table-striped table-hover w-50 text-center mx-auto">
+            
+            <thead>
+              <th>Malzemeler</th>
+              <th>Miktar</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="malzeme1"></td>
+                <td id="miktar1"></td>
+              </tr>
+              <tr>
+                <td id="malzeme2"></td>
+                <td id="miktar2"></td>
+              </tr>
+              <tr>
+                <td id="malzeme3"></td>
+                <td id="miktar3"></td>
+              </tr>
+              <tr>
+                <td id="malzeme4"></td>
+                <td id="miktar4"></td>
+              </tr>
+              <tr>
+                <td id="malzeme5"></td>
+                <td id="miktar5"></td>
+              </tr>
+              <tr>
+                <td id="malzeme6"></td>
+                <td id="miktar6"></td>
+              </tr>
+              <tr>
+                <td id="malzeme7"></td>
+                <td id="miktar7"></td>
+              </tr>
+              <tr>
+                <td id="malzeme8"></td>
+                <td id="miktar8"></td>
+              </tr>
+              <tr>
+                <td id="malzeme9"></td>
+                <td id="miktar9"></td>
+              </tr>
+              <tr>
+                <td id="malzeme10"></td>
+                <td id="miktar10"></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      <p class="mx-3" id="yemekhazirlanis"></p>
       
 
+    <script>
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+        .then(response => response.json())
+        .then(data => {
+            // data içerisindeki veriyi kullanabilirsiniz.
+            document.getElementById('meal').innerHTML = data.meals[0].strMeal;
+            document.getElementById('malzeme1').innerHTML = data.meals[0].strIngredient1;
+            document.getElementById('malzeme2').innerHTML = data.meals[0].strIngredient2;
+            document.getElementById('malzeme3').innerHTML = data.meals[0].strIngredient3;
+            document.getElementById('malzeme4').innerHTML = data.meals[0].strIngredient4;
+            document.getElementById('malzeme5').innerHTML = data.meals[0].strIngredient5;
+            document.getElementById('malzeme6').innerHTML = data.meals[0].strIngredient6;
+            document.getElementById('malzeme7').innerHTML = data.meals[0].strIngredient7;
+            document.getElementById('malzeme8').innerHTML = data.meals[0].strIngredient8;
+            document.getElementById('malzeme9').innerHTML = data.meals[0].strIngredient9;
+            document.getElementById('malzeme10').innerHTML = data.meals[0].strIngredient10;
+            document.getElementById('miktar1').innerHTML = data.meals[0].strMeasure1;
+            document.getElementById('miktar2').innerHTML = data.meals[0].strMeasure2;
+            document.getElementById('miktar3').innerHTML = data.meals[0].strMeasure3;
+            document.getElementById('miktar4').innerHTML = data.meals[0].strMeasure4;
+            document.getElementById('miktar5').innerHTML = data.meals[0].strMeasure5;
+            document.getElementById('miktar6').innerHTML = data.meals[0].strMeasure6;
+            document.getElementById('miktar7').innerHTML = data.meals[0].strMeasure7;
+            document.getElementById('miktar8').innerHTML = data.meals[0].strMeasure8;
+            document.getElementById('miktar9').innerHTML = data.meals[0].strMeasure9;
+            document.getElementById('miktar10').innerHTML = data.meals[0].strMeasure10;
+            document.getElementById("yemekresmi").src = data.meals[0].strMealThumb;
+            document.getElementById("yemekhazirlanis").innerHTML = data.meals[0].strInstructions;
+
+        })
+        .catch(error => console.error('Hata:', error));
+        
+    </script>
 
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
